@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link href="buttons.css" rel="stylesheet">
+<link href="list.css" rel="stylesheet">
+<link href="input.css" rel="stylesheet">
+<script>
+navigator.mozSetMessageHandler("activity", function (activityRequest) {
+var option = activityRequest.source;
+document.getElementById('x').value=option.data.url;
+//var h = option.data.url;
+//var h1 = 'http://www.reddit.com/submit.compact?url=' + escape(h); 
+//window.open(h1,'_blank');
+//javascript:(function() { var s = document.createElement("script"); s.setAttribute("id", "bitmark_js"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "//bitly.com/a/bitmarklet.js"); (top.document.body || top.document.getElementsByTagName("head")[0]).appendChild(s); })();
+//javascript:(function(){var%20w=600;var%20h=550;var%20x=Number((window.screen.width-w)/2);var%20y=Number((window.screen.height-h)/2);window.open('https://plus.google.com/share?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'','width='+w+',height='+h+',left='+x+',top='+y+',scrollbars=auto');})();
+});
+
+
+if (navigator.userAgent.indexOf("Firefox")!=-1){
+var requestt = navigator.mozApps.getSelf();
+requestt.onsuccess = function() {
+  if (requestt.result) {
+	document.getElementById('installdiv').innerHTML='';
+  } else {
+    document.getElementById('installdiv').innerHTML=' <button onclick="var request = navigator.mozApps.install('+"'"+"https://redpin.5apps.com/manifest.webapp"+"'"+');request.onsuccess = function() {};request.onerror = function() {};"> Install </button>';
+  }
+};}
+
+
+
+
+</script>
+<style>
+.hidden{display:none;}
+
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px; }
+   
+.iconn{
+    float:right;
+
+    width: 3.6rem;
+    height: 3.6rem; }
+
+</style>
+</head>
+<body>
+
+<input type="text"  autocomplete="off" name="x" id="x" /> <br>
+
+<button onclick="var h1 = 'http://www.reddit.com/submit.compact?url=' + escape(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="icon.svg" alt="Reddit" /> reddit</button>
+
+<button onclick="var h1 = 'https://plus.google.com/share?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="gplus.svg" alt="google+" /> google+</button>
+
+<br>
+<div id="installdiv"></div>
+<hr> 
+<center>
+Created by <br> 
+<a href="http://www.reddit.com/user/mc96107/.compact" target="_blank">mc96107</a>
+<br>
+<img class="displayed" src="icon.svg" alt="Reddit" />
+</center>
+</body>
+</html>
