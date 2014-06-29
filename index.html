@@ -7,6 +7,10 @@
 <link href="buttons.css" rel="stylesheet">
 <link href="list.css" rel="stylesheet">
 <link href="input.css" rel="stylesheet">
+    <link rel="stylesheet" href="gh-fork-ribbon.css">
+    <!--[if lt IE 9]>
+<link rel="stylesheet" href="gh-fork-ribbon.ie.css">
+<![endif]-->
 <script>
 navigator.mozSetMessageHandler("activity", function (activityRequest) {
 var option = activityRequest.source;
@@ -33,7 +37,7 @@ requestt.onsuccess = function() {
 
 </script>
 <style>
-.hidden{display:none;}
+.hidden{display:none !important;}
 
 .displayed {
     display: block;
@@ -52,17 +56,25 @@ requestt.onsuccess = function() {
 </head>
 <body>
 
-<input type="text"  autocomplete="off" name="x" id="x" /> <br>
+<input class="hidden" type="text"  autocomplete="off" name="x" id="x" /> <br>
 
-<button onclick="var h1 = 'http://www.reddit.com/submit.compact?url=' + escape(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="icon.svg" alt="Reddit" /> reddit</button>
+<button onclick="var h1 = 'http://www.reddit.com/submit.compact?url=' + escape(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="icon.svg" alt="R" /> reddit</button>
 
-<button onclick="var h1 = 'http://twitter.com/share?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="twitter.svg" alt="twitter" /> twitter</button>
+<button onclick="var h1 = 'http://twitter.com/share?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="twitter.svg" alt="T" /> twitter</button>
 
-<button onclick="var h1 = 'https://plus.google.com/share?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="gplus.svg" alt="google+" /> google+</button>
+<button onclick="var h1 = 'https://plus.google.com/share?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="gplus.svg" alt="G+" /> google+</button>
+
+<button onclick="var h1 = 'http://www.instapaper.com/text?u=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="instapaper.svg" alt="I" /> instapaper</button>
 
 <br>
-<hr> 
+
 <div id="installdiv"></div>
+
+    <div class="github-fork-ribbon-wrapper right-bottom">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/mc96107/redpin">Fork me on GitHub</a>
+        </div>
+    </div>
 <!--
 <center>
 Created by <br> 
