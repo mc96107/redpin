@@ -19,6 +19,7 @@ document.getElementById('x').value=option.data.url;
 //var h1 = 'http://www.reddit.com/submit.compact?url=' + escape(h); 
 //window.open(h1,'_blank');
 //http://twitter.com/share?url=https%3A%2F%2Fredpin.5apps.com%2F
+//http://getpocket.com/save?url=http%3A%2F%2Fwww.elirose.com%2F2012%2F05%2Fpocket%2F
 });
 
 
@@ -66,11 +67,13 @@ requestt.onsuccess = function() {
 
 <button onclick="var h1 = 'http://www.instapaper.com/text?u=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="instapaper.svg" alt="I" /> instapaper</button>
 
+<button onclick="var h1 = 'http://getpocket.com/save?url=' + encodeURIComponent(document.getElementById('x').value);window.open(h1,'_blank');"><img class="iconn" src="pocket.svg" alt="P" /> pocket</button>
+
 <br>
 
 <div id="installdiv"></div>
 
-    <div class="github-fork-ribbon-wrapper right-bottom">
+    <div class="github-fork-ribbon-wrapper left-bottom">
         <div class="github-fork-ribbon">
             <a href="https://github.com/mc96107/redpin">Fork me on GitHub</a>
         </div>
